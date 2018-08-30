@@ -48,3 +48,30 @@ m=video 15090 RTP/AVP 96	传输媒体信息 audio/video 本机接收数据端口
 a=recvonly						属性
 
 a=rtpmap:96 PS/90000					可以接受的音视频数据类型
+
+## 注册
+
+Register方法
+
+客户端向Server端发送Register消息，Server端返回200 OK。
+
+## 实时音视频和历史录像文件获取
+
+Invite方法
+
+
+
+SIP服务器  **1.发送Invite消息，携带SDP消息体 >>>** SIP客户端   **2.各种信息处理**     摄像头
+
+          **<<< 3.200 OK 携带SDP消息体包含音视频消息**     OR   400 Bad Request错误的请求
+          
+          **4. ACK 确认 >>>**
+          
+          <<< 5.音视频数据（音视频负载PS格式）
+          
+          >>> 6. BYE 断开Invite会话
+          
+          <<< 200 OK
+          
+          
+
